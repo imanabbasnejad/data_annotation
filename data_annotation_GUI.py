@@ -44,11 +44,11 @@ def stream(label, offset=0):
             frame_image_resize_array = np.asarray(frame_image_resize_squared)
             frame_image_resize_array_all.append(frame_image_resize_array)
             vid_name = video_name.split('.mp4')[0]
-            file_to_save = vid_name.split('/')[-1]
-            hf = h5py.File('./data_' + str(file_to_save) + '.h5', 'w')
-            hf.create_dataset('coordinates', data=cord_all)
-            hf.create_dataset('frames', data=frame_image_resize_array_all)
-            hf.close()
+            # file_to_save = vid_name.split('/')[-1]
+            # hf = h5py.File('./data_' + str(file_to_save) + '.h5', 'w')
+            # hf.create_dataset('coordinates', data=cord_all)
+            # hf.create_dataset('frames', data=frame_image_resize_array_all)
+            # hf.close()
             save_file_name = './tmp/data_' + str(file_to_save)+'_'+str(frame_index) + '.mat'
             data = {}
             data['image'] = frame_image_resize_array
